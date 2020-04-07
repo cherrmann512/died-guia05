@@ -1,5 +1,6 @@
 package died.guia5.problema2;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class PedidoPremium extends Pedido{
@@ -30,14 +31,17 @@ public class PedidoPremium extends Pedido{
 
 	@Override
 	public double comision() {
-		if(this.productos.size()>= 10) {
-			return this.precio()*0.15 +50;
-		}
-		else return this.precio()*0.15;
+		if(this.fechaEntrega != null) {
+			if(this.productos.size()>= 10) {
+				return this.precio()*0.15 +50;
+			}
+			else return this.precio()*0.15;
+		}else return 0;
 	}
 	
 	@Override
 	public String toString() { 
 		return this.productos.toString();
 	}
+	
 }

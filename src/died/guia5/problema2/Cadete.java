@@ -1,5 +1,6 @@
 package died.guia5.problema2;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Cadete {
@@ -11,9 +12,13 @@ public class Cadete {
 	public double comisiones() {
 		double com=0;
 		for (Pedido p : pedidos) {
-			com+=p.comision();
+				com+=p.comision();
 		}
 		return com;
+	}
+	public void entregarPedido (Pedido p) {
+		if(this.pedidos.contains(p))
+			p.setFechaEntrega(LocalDate.now());
 	}
 
 }

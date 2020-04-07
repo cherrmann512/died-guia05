@@ -33,7 +33,10 @@ public class PedidoBasico extends Pedido {
 	}
 	@Override
 	public double comision() {
-		return this.precio()*0.1;
+		if(fechaEntrega !=null) {
+			return this.precio()*0.1;
+		}
+		else return 0;
 	}
 	@Override
 	public String toString() { 

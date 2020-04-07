@@ -14,10 +14,11 @@ public class Application {
 		Producto prod10 = new Producto("aceite", 150);
 		Producto prod11 = new Producto("atún", 89);
 		
-		Pedido p1 = new PedidoBasico(false);
+		PedidoBasico p1 = new PedidoBasico(false);
 		Pedido p2 = new PedidoBasico(true); //express
-		Pedido p3 = new PedidoPremium();
+		PedidoPremium p3 = new PedidoPremium();
 		Pedido p4 = new PedidoPremium(); //mas de 10
+		Pedido p5 = new PedidoPremium();
 		
 		Cadete c1 = new Cadete();
 		
@@ -59,8 +60,24 @@ public class Application {
 		p4.agregarProducto(prod11);
 		System.out.println(p4.toString());
 		System.out.println(p4.precio());
+		System.out.println();
 		
+		p5.agregarProducto(prod1);
+		p5.agregarProducto(prod2);
+		p5.agregarProducto(prod3);
+		p5.agregarProducto(prod4);
+		p5.agregarProducto(prod5);
+		p5.agregarProducto(prod6);
+		p5.agregarProducto(prod7);
+		p5.agregarProducto(prod8);
+		p5.agregarProducto(prod9);
+		p5.agregarProducto(prod10);
+		p5.agregarProducto(prod11);
+		System.out.println(p5.toString());
+		System.out.println(p5.precio());
+		System.out.println();
 		
+		//sin entregar
 		c1.agregarPedido(p1);
 		System.out.println(c1.comisiones()); //comision de p1
 		c1.agregarPedido(p2);
@@ -68,10 +85,26 @@ public class Application {
 		c1.agregarPedido(p3);
 		System.out.println(c1.comisiones()); //comisiones de p1, p2 y p3
 		c1.agregarPedido(p4);
-		System.out.println(c1.comisiones()); //comisiones de todos los pedidos
+		System.out.println(c1.comisiones()); //comisiones de todos los pedidos 
 		
 		Cadete c3 = new Cadete();
-		c3.agregarPedido(p4);
-		System.out.println("\n"+ c3.comisiones());
+		c3.agregarPedido(p5);
+		System.out.println();
+		System.out.println("cadete 3: "+c3.comisiones());
+
+		
+		//entrega pedidos
+		System.out.println("Comisiones después de entregar los pedidos");
+		c1.entregarPedido(p1); 
+		System.out.println(c1.comisiones());//entregó pedido p1
+		c1.entregarPedido(p2);
+		System.out.println(c1.comisiones());//entregó pedido p2
+		c1.entregarPedido(p3);
+		System.out.println(c1.comisiones());//entregó pedido p3
+		c1.entregarPedido(p4);
+		System.out.println(c1.comisiones()); //entregó pedido p4 y muestra la suma de todas las comisiones
+		System.out.println("cadete 3: "+c3.comisiones()); //sin entregar su pedido
+		c3.entregarPedido(p5);
+		System.out.println("cadete 3: "+c3.comisiones()); //Entregó su pedido
 	}
 }
