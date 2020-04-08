@@ -1,6 +1,5 @@
 package died.guia5.problema2;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class PedidoPremium extends Pedido{

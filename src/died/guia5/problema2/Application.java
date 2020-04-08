@@ -1,4 +1,5 @@
 package died.guia5.problema2;
+import died.guia5.problema3.*;
 
 public class Application {
 	public static void main(String[] args) {
@@ -106,5 +107,16 @@ public class Application {
 		System.out.println("cadete 3: "+c3.comisiones()); //sin entregar su pedido
 		c3.entregarPedido(p5);
 		System.out.println("cadete 3: "+c3.comisiones()); //Entregó su pedido
+	
+		Tramite t1 = new Tramite("entregar papeles en el banco", "San Martin y Primera Junta");
+		c1.agregarPedido(t1);
+		System.out.println(c1.comisiones()); //debe ser igual
+		c1.entregarPedido(t1);
+		System.out.println("Luego de hacer el tramite "+c1.comisiones());
+	
+	
+	
+	
+	
 	}
 }
