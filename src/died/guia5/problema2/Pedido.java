@@ -1,8 +1,9 @@
 package died.guia5.problema2;
 
 import java.time.LocalDate;
+import died.guia5.problema3.*;
 
-public class Pedido {
+public class Pedido implements Comisionable{
 	protected LocalDate fechaEntrega;
 	public boolean agregarProducto (Producto p) {
 		return false;

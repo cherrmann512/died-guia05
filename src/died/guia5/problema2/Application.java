@@ -81,11 +81,11 @@ public class Application {
 		c1.agregarPedido(p1);
 		System.out.println(c1.comisiones()); //comision de p1
 		c1.agregarPedido(p2);
-		System.out.println(c1.comisiones()); //comisiones de p1 y p2
+		System.out.println(c1.comisiones()); //comisiones de p1 y p2 (sumados)
 		c1.agregarPedido(p3);
-		System.out.println(c1.comisiones()); //comisiones de p1, p2 y p3
+		System.out.println(c1.comisiones()); //comisiones de p1, p2 y p3 (sumados)
 		c1.agregarPedido(p4);
-		System.out.println(c1.comisiones()); //comisiones de todos los pedidos 
+		System.out.println(c1.comisiones()); //comisiones de todos los pedidos (sumados)
 		
 		Cadete c3 = new Cadete();
 		c3.agregarPedido(p5);
@@ -96,7 +96,7 @@ public class Application {
 		//entrega pedidos
 		System.out.println("Comisiones después de entregar los pedidos");
 		c1.entregarPedido(p1); 
-		System.out.println(c1.comisiones());//entregó pedido p1
+		System.out.println(c1.comisiones());//entregó pedido p
 		c1.entregarPedido(p2);
 		System.out.println(c1.comisiones());//entregó pedido p2
 		c1.entregarPedido(p3);
